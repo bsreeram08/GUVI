@@ -14,7 +14,7 @@ int main() {
 	for(int i=0;i<n;i++)
 	{
 	    cin>>temp;
-	    if(arr.find(temp)!=arr.end())
+	    if(arr.find(temp)==arr.end())
 	    {
 	        flag=false;
 	    }
