@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int value(char val)
 {
@@ -22,27 +22,30 @@ int main() {
 	string data;
 	cin>>data;
 	int result=0,ans1,ans2;
-	for(int iter=0;iter<data.length();iter++)
+	if(data.length()<=2)
 	{
-	    ans1=value(data[iter]);
-	    if(iter+1<data.length())
-	    {
-	        ans2=value(data[iter+1]);
-	        if(ans1>=ans2)
-	        {
-	            result=result+ans1+ans2;
-	        }
-	        else
-	        {
-	            result=result+ans2-ans1;
-	        }
-	        iter++;
-	    }
-	    else
-	    {
-	        result=result+ans1;
-	    }
+    	for(int iter=0;iter<data.length();iter++)
+    	{
+    	    ans1=value(data[iter]);
+    	    if(iter+1<data.length())
+    	    {
+    	        ans2=value(data[iter+1]);
+    	        if(ans1>=ans2)
+    	        {
+    	            result=result+ans1+ans2;
+    	        }
+    	        else
+    	        {
+    	            result=result+ans2-ans1;
+    	        }
+    	        iter++;
+    	    }
+    	    else
+    	    {
+    	        result=result+ans1;
+    	    }
+    	}
+    	cout<<result;
 	}
-	cout<<result;
 	return 0;
 }
