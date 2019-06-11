@@ -32,6 +32,11 @@ int main()
 	int n;
 	cin>>n;
 	string ans=buildLowNum(str, n); 
+	if(ans=="")
+	{
+	    cout<<0;
+	    return 0;
+	}
 	if(ans[0]=='0')
 	{
 	    long long int result =stoi(ans);
