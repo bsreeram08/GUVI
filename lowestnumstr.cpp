@@ -31,13 +31,13 @@ int main()
 	cin>>str;
 	int n;
 	cin>>n;
-	string ans = buildLowNum(str, n); 
-	if(ans=="")
+	string ans=buildLowNum(str, n); 
+	if(ans[0]=='0')
 	{
-	    cout<<0;
+	    long long int result =stoi(ans);
+	    cout<<result;
 	    return 0;
 	}
-	long long int res = stoi(ans);
-	cout<<res;
+	cout<<ans;
 	return 0; 
 } 
