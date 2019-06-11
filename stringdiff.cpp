@@ -11,7 +11,10 @@ int main() {
 	    {
 	        data1[i]=tolower(data1[i]);
 	        data2[i]=tolower(data2[i]);
-	        diff=diff+abs(data1[i]-data2[i]);
+	        if(data1[i]!=data2[i])
+	        {
+	            diff++;
+	        }
 	    }
 	    if(diff<=1)
 	    {
