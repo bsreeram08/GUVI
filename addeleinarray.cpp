@@ -1,24 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+int n,temp;
+int find(int val,int *arr)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]==val)
+        {
+            return val;
+        }
+    }
+    return -1;
+}
 int main() {
-	int n,temp;
 	cin>>n;
-	map<int,int> arr;
+	int arr[n];
 	for(int i=0;i<n;i++)
 	{
-	    cin>>temp;
-	    arr[temp]=1;
+	    cin>>arr[i];
 	}
-	for(auto iter = arr.begin();iter!=arr.end();iter++)
+	for(int i=0;i<n;i++)
 	{
-	    for(auto iter2=arr.begin();iter2!=arr.end();iter2++)
+	    for(int j=i+1;j<n;j++)
 	    {
-	        if(iter2->first>iter->first)
-    	        if(arr.find(iter->first+iter2->first)!=arr.end())
-    	        {
-    	            cout<<iter->first<<" "<<iter2->first<<" "<<arr.find(iter->first+iter2->first)->first<<endl;
-    	        }
+	        int x=find(arr[i]+arr[j],arr);
+	        if(x!=-1)
+	        {
+	            cout<<arr[i]<<" "<<arr[j]<<" "<<x<<endl;
+	        }
 	    }
 	}
 	return 0;
